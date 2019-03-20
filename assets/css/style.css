@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'game_of_thronesregular';
+    src: url('../font/game_of_thrones-webfont.woff') format('woff'),
+         url('../font/game_of_thrones-webfont.woff2') format('woffw');
+    font-weight: normal;
+    font-style: normal;
+}
+html {
+    font-family: 'game_of_thronesregular';
+}
+header {
+    margin-top: 15px;
+    font-size: 48px;
+    text-align: center;
+}
+#start-title {
+    position: relative;
+    text-align: center;
+    top: 228px;
+}
+#start {
+    position: absolute;
+    bottom: 30%;
+    left: 42%;
+}
