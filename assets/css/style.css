@@ -7,19 +7,62 @@
 }
 html {
     font-family: 'game_of_thronesregular';
+    font-size: 24px;
+
 }
 header {
-    margin-top: 15px;
+    padding: 40px;
     font-size: 48px;
     text-align: center;
 }
-#start-title {
+.container {
     position: relative;
+    /* border: 2px solid red; */
+    width: 90%;
+    margin: auto;
+    height: 900px;
+}
+#display-time {
     text-align: center;
-    top: 228px;
+    position: absolute;
+    /* border: 2px solid red; */
+    width: 50%;
+    height: 20%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 30%;
+}
+.center-container{
+    position: absolute;
+    /* border: 2px solid blue; */
+    width: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 45%;
+}
+#start-title {
+    position: absolute;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    left: 60%;
+    top: 50%;
+    text-align: center;
 }
 #start {
     position: absolute;
-    bottom: 30%;
-    left: 42%;
+    top: 0; 
+    right: 0;
+}
+.center-answers {
+    text-align: center;
+    position: absolute;
+    /* border: 2px solid red; */
+    width: 50%;
+    height: 20%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 65%;
+}
+a:link {
+    text-decoration: none;
 }
