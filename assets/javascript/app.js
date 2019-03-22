@@ -1,4 +1,4 @@
-// questions, answers stored in an object
+// questions, answers stored in an array 
 // timer counting down 
 // when 0 display out of time
 // shows correct answer
@@ -70,9 +70,9 @@ var questions = [
     }];
 
 display();
-// display stuff places
-function display() {
 
+function display() {
+    timer();
     var correct = 0;
     var incorrect = 0;
 
@@ -80,8 +80,8 @@ function display() {
 
 
     function randQuestion() {
-    
         var randQuest = questions[Math.floor(Math.random() * 5)];
+        $('.questions').empty();
         $('.questions').append(randQuest.question);
         questionCall(randQuest);
         return randQuest;
@@ -99,7 +99,7 @@ function display() {
             var doc = $(this);
             answerCheck(doc.text());
             console.log(doc.text());
-           
+
         });
     }
 
@@ -121,6 +121,20 @@ function display() {
         console.log(incorrect);
     }
 
+    function timer() {
+        var timeLeft = 5;
+        var countDown = setInterval(function () {
+            $('#display-time').text("Time Remaining: " + timeLeft + " Seconds");
+            timeLeft -= 1;
+            if (timeLeft < 0) {
+                clearInterval(countDown);
+                incorrect++;
+                randQuestion();
+                console.log(incorrect);
+            }
+        }, 1000);
+    
+    }
 
 }
 
@@ -132,16 +146,4 @@ function display() {
 // at 0 remove all text and display correct answer with picture
 // reset to 45 sec every question
 // remove when correct question is shown
-function timer() {
-    var timeLeft = 45;
-    var countDown = setInterval(function () {
-        $('#display-time').text("Time Remaining: " + timeLeft + " Seconds");
-        timeLeft -= 1;
-        if (timeLeft >= 0) {
-            clearInterval(countDown);
-        }
-    }, 1000);
 
-}
-
-$('.timer').on("click", timer);
