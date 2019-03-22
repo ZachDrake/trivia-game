@@ -8,7 +8,8 @@
 html {
     font-family: 'game_of_thronesregular';
     font-size: 24px;
-
+    line-height: 30px;
+    
 }
 header {
     padding: 40px;
@@ -39,6 +40,8 @@ header {
     transform: translate(-50%, -50%);
     left: 50%;
     top: 45%;
+    text-align: center;
+    padding-bottom: 45px;
 }
 #start-title {
     position: absolute;
@@ -65,4 +68,11 @@ header {
 }
 a:link {
     text-decoration: none;
+}
+p {
+    margin: 25px;
+    font-size: 15px;
+}
+#test {
+    font-family: Arial, Helvetica, sans-serif;
 }
