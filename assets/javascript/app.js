@@ -73,7 +73,7 @@ display();
 
 function display() {
     timer();
-    var correct = 0;
+    var correctAnswer = 0;
     var incorrect = 0;
 
     $('.center-answers').empty();
@@ -95,34 +95,27 @@ function display() {
             $('.center-answers').append("<button class='test'>" + questions.choices[j] + "</button>");
         }
         $('button.test').on("click", function () {
-            // console.log("f");
+
             var doc = $(this);
             answerCheck(doc.text());
-            console.log(doc.text());
 
         });
     }
 
     function answerCheck(answer) {
         if (answer === currentQuestion.correct) {
-            alert("true");
-            correct++;
-            // console.log('a');
+            correctAnswer++;
             randQuestion();
-            // console.log('b')
         } else {
-            incorrect++;
-            // console.log('c');
+            incorrectAnswer++;
             randQuestion();
-            // console.log('d')
         }
-        
-        console.log(correct);
-        console.log(incorrect);
+
+
     }
 
     function timer() {
-        var timeLeft = 5;
+        var timeLeft = 45;
         var countDown = setInterval(function () {
             $('#display-time').text("Time Remaining: " + timeLeft + " Seconds");
             timeLeft -= 1;
@@ -133,7 +126,7 @@ function display() {
                 console.log(incorrect);
             }
         }, 1000);
-    
+
     }
 
 }
